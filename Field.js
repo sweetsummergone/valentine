@@ -66,6 +66,7 @@ export default class Field {
     }
 
     closeCards() {
+        this._allowOpening();
         this._field.forEach(card => {
             card.toggleCard();
         });
