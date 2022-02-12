@@ -1,8 +1,8 @@
 export default class Card {
-    constructor(url) {
+    constructor(url, isClosed) {
         this._image = url;
         this._shirt = "./images/type_1/shirt.svg";
-        this._closed = false;
+        this._closed = isClosed;
     }
 
     _getTemplate() {
@@ -14,17 +14,22 @@ export default class Card {
         return template;
     }
 
-    closeCard() {
-        this._closed = true;
+    getElement() {
+        return this._element;
     }
 
-    openCard() {
-        this._closed = false;
+    toggleCard() {
+        this._closed = !this._closed;
     }
 
     generateCard() {
-        const element = this._getTemplate()
-        this._closed ? element.querySelector(".cell__image").src = this._shirt : element.querySelector(".cell__image").src = this._image;
-        return element;
+        this._element = this._getTemplate();
+        if (this._closed) {
+            this._element.classList.add("cell__closed");
+        } else {
+            this._element.classList.remove("cell__closed");
+            this._element.style.backgroundImage = `url("${this._image}"`;
+        }
+        return this._element;
     }
 }
