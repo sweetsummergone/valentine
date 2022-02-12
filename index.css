@@ -6,6 +6,7 @@
     margin: 20vh auto;
     font-family: 'TF', 'Courier New', Courier, monospace;
     font-size: 4em;
+    text-shadow: 4px 3px 0px #7A7A7A;
     text-align: center;
     color: black;
 }
