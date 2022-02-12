@@ -1,4 +1,4 @@
-import { wishes } from "./wishes.js";
+
 import { shuffleArray } from "./utils.js";
 import Card from "./Card.js";
 import Field from "./Field.js";
@@ -35,13 +35,4 @@ setTimeout( () => {
     document.querySelector(".cells").textContent = "";
     field.closeCards();
     field.generateField();
-    // field.getField().forEach((elem, index) => {
-        
-    // });
-}, 1000);
-
-// Generation of wish from wishes list
-
-// const wish = wishes[Math.floor(Math.random()*wishes.length)];
-
-// document.querySelector(".wish").textContent = wish;
+}, 3000);

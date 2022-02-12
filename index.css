@@ -1,9 +1,43 @@
 @import url("./vendor/normalize.css");
+@import url("./vendor/fonts/fonts.css");
+
+.wish {
+    max-width: 70%;
+    margin: 20vh auto;
+    font-family: 'TF', 'Courier New', Courier, monospace;
+    font-size: 4em;
+    text-align: center;
+    color: black;
+}
+
+@media screen and (max-width: 800px) {
+    .wish {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wish {
+        font-size: 2em;
+    }
+}
 
 .page {
     min-height: 100%;
     min-width: 90%;
     background-color: #fec1b2;
+}
+
+.blocking {
+    position: absolute;
+    top:15%;
+    left: 15%;
+    min-width: 70%;
+    min-height: 70%;
+}
+
+.hidden {
+    display: none;
 }
 
 .gameboard {
