@@ -1,5 +1,6 @@
 import { wishes } from "./wishes.js";
 import { shuffleArray } from "./utils.js";
+import Card from "./Card.js";
 
 let field = [];
 
@@ -21,26 +22,23 @@ pathArray.push(clonedPathArray)
 pathArray = pathArray.flat(); // flat for deleting array in array
 
 pathArray.forEach(url => {
-    const newItem = document
-        .querySelector("#cells__cell").content
-        .querySelector(".cells__cell")
-        .cloneNode(true);
+    const newItem = new Card(url);
+    field.push(newItem);
+})
 
-    newItem.querySelector(".cell__image").src = url;
+field.forEach(item => {
+    const newItem = item.generateCard();
     document.querySelector(".cells").append(newItem);
 })
 
 // After cards was created and added, we suppose to close it all
 
-const cards = document.querySelectorAll(".cells__cell");
-
-function closeCard(card) {
-    card.classList.toggle("cell__closed");
-}
-
 setTimeout( () => {
-    cards.forEach(card => {
-        closeCard(card);
+    document.querySelector(".cells").textContent = "";
+    field.forEach(card => {
+        card.closeCard();
+        const newItem = card.generateCard();
+        document.querySelector(".cells").append(newItem);
     })    
 }, 3000)
 
