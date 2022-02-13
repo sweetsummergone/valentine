@@ -1,0 +1,21 @@
+
+.wish {
+    max-width: 70%;
+    margin: 20vh auto;
+    font-size: 4em;
+    text-shadow: 4px 3px 0px #7A7A7A;
+    text-align: center;
+    color: black;
+}
+
+@media screen and (max-width: 800px) {
+    .wish {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wish {
+        font-size: 2em;
+    }
+}
