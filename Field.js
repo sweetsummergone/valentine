@@ -47,7 +47,7 @@ export default class Field {
                                 this._renderField();
                                 this._allowOpening();
                             }, 1000)
-                        } else {
+                        } else if (this._openedOne !== this._openedTwo) {
                             this._globalCounter += 1;
                             this._renderField();
                         }

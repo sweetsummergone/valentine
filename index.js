@@ -29,10 +29,15 @@ pathArray.forEach(url => {
 
 field.generateField();
 
-// After cards was created and added, we suppose to close it all
+// After cards was created, added, and button pressed, we suppose to close it all
 
-setTimeout( () => {
-    document.querySelector(".cells").textContent = "";
-    field.closeCards();
-    field.generateField();
-}, 3000);
+document.querySelector(".modal__button").addEventListener("click", 
+    () => {
+        document.querySelector(".modal__intro").classList.add("hidden");
+        setTimeout( () => {
+            document.querySelector(".cells").textContent = "";
+            field.closeCards();
+            field.generateField();
+        }, 3000);
+    }
+);
